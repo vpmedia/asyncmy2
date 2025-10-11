@@ -4,8 +4,9 @@
 
 ### 0.2.12
 
-- Migrated from poetry to uv with pdm backend (#136)
-- Improved compatibility with MacOS development environment support
+- Migrated from poetry to uv with pdm backend. ([#136](https://github.com/long2ice/asyncmy/pull/136))
+- Fixed security vulnerability with escape_dict converter ([CVE-2024-36039](https://github.com/advisories/GHSA-v9hf-5j83-6xpp)).
+- Improved compatibility with MacOS development environment support.
 
 ### 0.2.11
 

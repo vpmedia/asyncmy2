@@ -36,7 +36,7 @@ The result comes from [benchmark](./benchmark).
 ## Install
 
 ```shell
-pip install asyncmy
+uv add asyncmy
 ```
 
 ### Installing on Windows
@@ -58,7 +58,7 @@ vs_buildtools.exe --norestart --passive --downloadThenInstall --includeRecommend
 7. Install asyncmy via PIP
 
 ```shell
-pip install asyncmy
+uv add asyncmy
 ```
 
 Now you can uninstall previously installed tools.
