@@ -5,6 +5,7 @@ permissions:
 
 on:
   push:
+    branches: [dev, main]
   pull_request:
 
 concurrency:
