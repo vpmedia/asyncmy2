@@ -7,6 +7,8 @@
 - Migrated from poetry to uv with pdm backend. ([#136](https://github.com/long2ice/asyncmy/pull/136))
 - Fixed security vulnerability with escape_dict converter ([CVE-2024-36039](https://github.com/advisories/GHSA-v9hf-5j83-6xpp)).
 - Improved compatibility with MacOS development environment support.
+- Fixed pytest asyncio test runner issues with latest version.
+- Bumped dependency versions.
 
 ### 0.2.11
 
