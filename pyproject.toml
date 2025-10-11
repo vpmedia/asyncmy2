@@ -45,7 +45,10 @@ include = ["CHANGELOG.md", "LICENSE", "README.md"]
 
 [build-system]
 build-backend = "pdm.backend"
-requires = ["pdm-backend", "setuptools", "cython"]
+requires = ["pdm-backend", "setuptools", "wheel", "cython"]
+
+[tool.cibuildwheel]
+build-frontend = "pip"
 
 [tool.pytest.ini_options]
 asyncio_default_fixture_loop_scope = "session"
