@@ -2,6 +2,10 @@
 
 ## 0.2
 
+### 0.2.14
+
+- Added handling of cancelled tasks while execution in progress. ([#108](https://github.com/long2ice/asyncmy/pull/108))
+
 ### 0.2.13
 
 - Added missing wheel publishing for Windows platform.

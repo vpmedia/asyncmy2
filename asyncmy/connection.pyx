@@ -618,7 +618,12 @@ class Connection:
         """
         buff = bytearray()
         while True:
-            packet_header = await self._read_bytes(4)
+            try:
+                packet_header = await self._read_bytes(4)
+            except asyncio.CancelledError:
+                self.close()
+                self._connected = False
+                raise
             btrl, btrh, packet_number = HBB.unpack(packet_header)
             bytes_to_read = btrl + (btrh << 16)
             if packet_number != self._next_seq_id:
@@ -633,7 +638,12 @@ class Connection:
                     % (packet_number, self._next_seq_id)
                 )
             self._next_seq_id = (self._next_seq_id + 1) % 256
-            recv_data = await self._read_bytes(bytes_to_read)
+            try:
+                recv_data = await self._read_bytes(bytes_to_read)
+            except asyncio.CancelledError:
+                self.close()
+                self._connected = False
+                raise
             buff.extend(recv_data)
             # https://dev.mysql.com/doc/internals/en/sending-more-than-16mbyte.html
             if bytes_to_read == 0xFFFFFF:
