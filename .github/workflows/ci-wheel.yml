@@ -5,7 +5,7 @@ permissions:
 
 on:
   push:
-    branches: [experimental]
+    branches: [dev]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -30,5 +30,5 @@ jobs:
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.23.3
         env:
-          # CIBW_SKIP: "cp38-* cp39-* pp38-* pp39-*"
+          CIBW_SKIP: "pp39-win_amd64"
           CIBW_BEFORE_BUILD: "python -m pip install --upgrade pip cython"
