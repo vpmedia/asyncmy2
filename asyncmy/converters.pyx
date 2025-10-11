@@ -27,11 +27,8 @@ cpdef escape_item(val, str charset, mapping: dict = None):
     return val
 
 cpdef dict escape_dict(dict val, str charset, mapping: dict = None):
-    n = {}
-    for k, v in val.items():
-        quoted = escape_item(v, charset, mapping)
-        n[k] = quoted
-    return n
+    raise TypeError("dict can not be used as parameter")
+
 
 cpdef str escape_sequence(tuple val, str charset, mapping: dict = None):
     n = []
