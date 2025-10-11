@@ -15,7 +15,7 @@ wheels = [
 ]
 
 [[package]]
-name = "asyncmy"
+name = "asyncmy2"
 source = { editable = "." }
 
 [package.dev-dependencies]
