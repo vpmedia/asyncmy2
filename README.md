@@ -9,7 +9,9 @@
 
 `asyncmy` is a fast asyncio MySQL/MariaDB driver, which reuse most of [pymysql](https://github.com/PyMySQL/PyMySQL)
 and [aiomysql](https://github.com/aio-libs/aiomysql) but rewrite core protocol with [cython](https://cython.org/) to
-speedup. This project is a community maintained fork of https://github.com/long2ice/asyncmy.
+speedup. 
+
+This project is a community maintained fork of https://github.com/long2ice/asyncmy.
 
 ## Features
 
@@ -55,7 +57,7 @@ vs_buildtools.exe --norestart --passive --downloadThenInstall --includeRecommend
 
 5. Wait until the installation is finished
 6. After installation will finish, restart your computer
-7. Install asyncmy via PIP
+7. Install asyncmy via UV
 
 ```shell
 uv add asyncmy

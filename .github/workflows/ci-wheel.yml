@@ -5,7 +5,7 @@ permissions:
 
 on:
   push:
-    branches: [dev]
+    branches: [disabled]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
