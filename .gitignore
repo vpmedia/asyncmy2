@@ -135,3 +135,6 @@ dmypy.json
 .idea
 asyncmy/*.c
 cython_debug
+
+# VSCode
+.vscode/
