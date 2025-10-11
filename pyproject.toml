@@ -24,11 +24,9 @@ dev = [
 test = [
     "pytest",
     "mysqlclient",
-    "pymysql >=0.8.1",
+    "pymysql",
     "aiomysql",
-    # Breaking change in 0.23.*
-    # https://github.com/pytest-dev/pytest-asyncio/issues/706
-    "pytest-asyncio >=0.21.2,<0.22",
+    "pytest-asyncio",
     "pytest-mock",
     "pytest-xdist",
     "cryptography",
@@ -49,8 +47,8 @@ build-backend = "pdm.backend"
 requires = ["pdm-backend", "setuptools", "cython"]
 
 [tool.pytest.ini_options]
-# asyncio_default_fixture_loop_scope = "session"
-# asyncio_default_test_loop_scope= "session"
+asyncio_default_fixture_loop_scope = "session"
+asyncio_default_test_loop_scope= "session"
 asyncio_mode = "auto"
 addopts = [
     "--strict-config",
