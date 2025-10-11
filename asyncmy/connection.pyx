@@ -51,7 +51,7 @@ try:
 
     DEFAULT_USER = getpass.getuser()
     del getpass
-except (ImportError, KeyError):
+except (ImportError, KeyError, OSError):
     # KeyError occurs when there's no entry in OS database for a current user.
     DEFAULT_USER = None
 
