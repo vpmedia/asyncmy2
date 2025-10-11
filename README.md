@@ -1,9 +1,9 @@
 # asyncmy - A fast asyncio MySQL/MariaDB driver
 
-[![image](https://img.shields.io/pypi/v/asyncmy.svg?style=flat)](https://pypi.python.org/pypi/asyncmy)
-[![image](https://img.shields.io/github/license/long2ice/asyncmy)](https://github.com/long2ice/asyncmy)
-[![pypi](https://github.com/long2ice/asyncmy/actions/workflows/pypi.yml/badge.svg)](https://github.com/long2ice/asyncmy/actions/workflows/pypi.yml)
-[![ci](https://github.com/long2ice/asyncmy/actions/workflows/ci.yml/badge.svg)](https://github.com/long2ice/asyncmy/actions/workflows/ci.yml)
+[![image](https://img.shields.io/pypi/v/asyncmy2.svg?style=flat)](https://pypi.python.org/pypi/asyncmy2)
+[![image](https://img.shields.io/github/license/vpmedia/asyncmy2)](https://github.com/vpmedia/asyncmy2)
+[![pypi](https://github.com/vpmedia/asyncmy2/actions/workflows/publish.yml/badge.svg)](https://github.com/vpmedia/asyncmy2/actions/workflows/publish.yml)
+[![ci](https://github.com/vpmedia/asyncmy2/actions/workflows/ci.yml/badge.svg)](https://github.com/vpmedia/asyncmy2/actions/workflows/ci.yml)
 
 ## Introduction
 
@@ -16,7 +16,7 @@ speedup. This project is a community maintained fork of https://github.com/long2
 - API compatible with [aiomysql](https://github.com/aio-libs/aiomysql).
 - Faster by [cython](https://cython.org/).
 - MySQL replication protocol support with `asyncio`.
-- Tested both MySQL and MariaDB in [CI](https://github.com/long2ice/asyncmy/blob/dev/.github/workflows/ci.yml).
+- Tested both MySQL and MariaDB in [CI](https://github.com/vpmedia/asyncmy2/blob/dev/.github/workflows/ci.yml).
 
 ## Benchmark
 

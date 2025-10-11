@@ -4,6 +4,11 @@ on:
     branches-ignore:
       - main
   pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   ci_mysql:
     runs-on: ubuntu-latest
@@ -17,17 +22,17 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 5
     strategy:
       matrix:
-        python-version: [ "3.9", "3.10", "3.11", "3.12", "3.13", "3.14" ]
+        python-version: [ "3.10", "3.11", "3.12", "3.13", "3.14" ]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          allow-prereleases: true
+          # allow-prereleases: true
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
-      - name: Run ci
+      - name: Run CI
         run: uv run make ci
 
   ci_mariadb:
@@ -42,15 +47,15 @@ jobs:
         options: --health-cmd="mariadb-admin ping -uroot -p${MYSQL_ROOT_PASSWORD}" --health-interval 10s --health-timeout 5s --health-retries 5
     strategy:
       matrix:
-        python-version: [ "3.9", "3.10", "3.11", "3.12", "3.13", "3.14" ]
+        python-version: [ "3.10", "3.11", "3.12", "3.13", "3.14" ]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          allow-prereleases: true
+          # allow-prereleases: true
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
-      - name: Run ci
+      - name: Run CI
         run: uv run make ci

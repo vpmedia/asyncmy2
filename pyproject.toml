@@ -1,18 +1,18 @@
 [project]
-authors = [{ name = "long2ice", email = "long2ice@gmail.com" }]
+authors = [{ name = "vpmedia", email = "andras@vpmedia.hu" }, { name = "long2ice", email = "long2ice@gmail.com" }]
 description = "A fast asyncio MySQL driver"
 keywords = ["driver", "asyncio", "mysql"]
 license = "Apache-2.0"
 name = "asyncmy"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = []
 dynamic = ["version"]
 
 [project.urls]
-documentation = "https://github.com/long2ice/asyncmy"
-homepage = "https://github.com/long2ice/asyncmy"
-repository = "https://github.com/long2ice/asyncmy.git"
+documentation = "https://github.com/vpmedia/asyncmy2"
+homepage = "https://github.com/vpmedia/asyncmy2"
+repository = "https://github.com/vpmedia/asyncmy2.git"
 
 [dependency-groups]
 dev = [

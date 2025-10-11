@@ -2,6 +2,11 @@
 
 ## 0.2
 
+### 0.2.12
+
+- Migrated from poetry to uv with pdm backend (#136)
+- Improved compatibility with MacOS development environment support
+
 ### 0.2.11
 
 - Fix `'Connection' object has no attribute '_auth_plugin_name'` (#86)
