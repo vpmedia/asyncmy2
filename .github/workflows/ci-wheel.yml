@@ -17,7 +17,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v5
         with:
@@ -31,4 +31,4 @@ jobs:
         uses: pypa/cibuildwheel@v2.23.3
         env:
           # CIBW_SKIP: "cp38-* cp39-* pp38-* pp39-*"
-          CIBW_BEFORE_BUILD: "pip install --upgrade pip cython"
+          CIBW_BEFORE_BUILD: "python -m pip install --upgrade pip cython"
