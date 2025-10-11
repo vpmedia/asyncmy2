@@ -1,5 +1,6 @@
 import datetime
 
+import pytest
 from asyncmy.converters import escape_item, escape_str
 
 
@@ -20,3 +21,9 @@ def test_escape_str():
     # so it should accept values that are not strings as well.
     assert escape_str(datetime.date(2023, 6, 2)) == "'2023-06-02'"
     assert escape_str(CustomDate(2023, 6, 2)) == "'2023-06-02'"
+
+
+def test_escape_unsigned_big_int():
+    with pytest.raises(OverflowError):
+        assert escape_item(2**64 - 1, "utf-8") == str(2**64 - 1)
+        assert escape_item(0, "utf-8") == str(0)
