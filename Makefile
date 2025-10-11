@@ -19,7 +19,7 @@ up:
 	@uv lock --upgrade
 
 deps:
-	@uv sync --all-groups --all-extras $(options)
+	@uv sync --all-groups --all-extras --reinstall-package asyncmy2 $(options)
 
 _style:
 	@uv run ruff format $(checkfiles)
