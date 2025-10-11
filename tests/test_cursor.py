@@ -60,6 +60,7 @@ async def test_insert(connection):
                 "float": 1.0,
                 "string": "1",
                 "tinyint": 1,
+                "json": None,
             }
         ]
 

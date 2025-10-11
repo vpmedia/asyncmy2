@@ -39,6 +39,7 @@ async def connection():
 @pytest_asyncio.fixture(scope="session", autouse=True)
 async def initialize_tests(connection):
     async with connection.cursor(cursor=DictCursor) as cursor:
+        await cursor.execute("""DROP TABLE IF EXISTS test.`asyncmy`;""")
         await cursor.execute("create database if not exists test")
         await cursor.execute(
             """CREATE TABLE  IF NOT EXISTS test.`asyncmy`  (
@@ -50,6 +51,7 @@ async def initialize_tests(connection):
   `float` float DEFAULT NULL,
   `string` varchar(200) DEFAULT NULL,
   `tinyint` tinyint DEFAULT NULL,
+  `json` json DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `asyncmy_string_index` (`string`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci"""
