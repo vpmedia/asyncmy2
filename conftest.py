@@ -39,8 +39,8 @@ async def connection():
 @pytest_asyncio.fixture(scope="session", autouse=True)
 async def initialize_tests(connection):
     async with connection.cursor(cursor=DictCursor) as cursor:
-        await cursor.execute("""DROP TABLE IF EXISTS test.`asyncmy`;""")
         await cursor.execute("create database if not exists test")
+        await cursor.execute("""DROP TABLE IF EXISTS test.`asyncmy`;""")
         await cursor.execute(
             """CREATE TABLE  IF NOT EXISTS test.`asyncmy`  (
   `id` int NOT NULL AUTO_INCREMENT,
