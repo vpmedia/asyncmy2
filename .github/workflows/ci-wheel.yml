@@ -22,7 +22,8 @@ jobs:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
+      - uses: actions/setup-python@v5
+      - name: Install cibuildwheel
+        run: python -m pip install --upgrade pip cython cibuildwheel
       - name: Build wheels
-        uses: pypa/cibuildwheel@v3.2.0
-        env:
-          CIBW_BEFORE_BUILD: "pip install --upgrade pip cython"
+        run: python -m cibuildwheel --output-dir wheelhouse
