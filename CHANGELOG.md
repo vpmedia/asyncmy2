@@ -2,13 +2,17 @@
 
 ## 0.2
 
+### 0.2.13
+
+- Added missing wheel publishing for Windows platform.
+
 ### 0.2.12
 
 - Migrated from poetry to uv with pdm backend. ([#136](https://github.com/long2ice/asyncmy/pull/136))
-- Fixed security vulnerability with escape_dict converter ([CVE-2024-36039](https://github.com/advisories/GHSA-v9hf-5j83-6xpp)).
-- Added OSError exception handling to connection getpass.getuser() for Python 3.13+ compatibility ([#133](https://github.com/long2ice/asyncmy/pull/133))
-- Fixed deprecated VALUES regexp syntax issue ([#120](https://github.com/long2ice/asyncmy/pull/120))
-- Changed connection pool behavior to send QUIT message while closing connections ([#113](https://github.com/long2ice/asyncmy/pull/113))
+- Fixed security vulnerability with escape_dict converter. ([CVE-2024-36039](https://github.com/advisories/GHSA-v9hf-5j83-6xpp))
+- Added OSError exception handling to connection getpass.getuser() for Python 3.13+ compatibility. ([#133](https://github.com/long2ice/asyncmy/pull/133))
+- Fixed deprecated VALUES regexp syntax issue. ([#120](https://github.com/long2ice/asyncmy/pull/120))
+- Changed connection pool behavior to send QUIT message while closing connections. ([#113](https://github.com/long2ice/asyncmy/pull/113))
 - Improved compatibility with MacOS development environment support.
 - Fixed pytest asyncio test runner issues with latest version.
 - Bumped python and github workflow dependency versions.
