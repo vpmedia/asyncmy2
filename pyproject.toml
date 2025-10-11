@@ -22,14 +22,15 @@ dev = [
     "ruff",
 ]
 test = [
-    "pytest",
+    "aiomysql",
+    "cryptography",
     "mysqlclient",
     "pymysql",
-    "aiomysql",
     "pytest-asyncio",
     "pytest-mock",
     "pytest-xdist",
-    "cryptography",
+    "pytest",
+    "rich",
     "uvloop; sys_platform != 'win32' and implementation_name == 'cpython'",
 ]
 

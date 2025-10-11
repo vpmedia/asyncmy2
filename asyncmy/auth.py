@@ -24,7 +24,7 @@ sha1_new = partial(hashlib.new, "sha1")
 # https://dev.mysql.com/doc/internals/en/secure-password-authentication.html#packet-Authentication::Native41
 
 
-def scramble_native_password(password, message):
+def scramble_native_password(password: bytes, message: bytes):
     """Scramble used for mysql_native_password"""
     if not password:
         return b""

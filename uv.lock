@@ -38,6 +38,7 @@ test = [
     { name = "pytest-asyncio" },
     { name = "pytest-mock" },
     { name = "pytest-xdist" },
+    { name = "rich" },
     { name = "uvloop", marker = "implementation_name == 'cpython' and sys_platform != 'win32'" },
 ]
 
@@ -59,6 +60,7 @@ test = [
     { name = "pytest-asyncio" },
     { name = "pytest-mock" },
     { name = "pytest-xdist" },
+    { name = "rich" },
     { name = "uvloop", marker = "implementation_name == 'cpython' and sys_platform != 'win32'" },
 ]
 

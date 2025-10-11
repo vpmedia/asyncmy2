@@ -1,5 +1,5 @@
-import asyncio
 from rich.pretty import pprint
+
 from benchmark.benchmark_delete import benchmark_delete
 from benchmark.benchmark_insert import benchmark_insert, conn_mysqlclient
 from benchmark.benchmark_select import benchmark_select
