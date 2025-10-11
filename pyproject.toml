@@ -3,7 +3,7 @@ authors = [{ name = "vpmedia", email = "andras@vpmedia.hu" }, { name = "long2ice
 description = "A fast asyncio MySQL driver"
 keywords = ["driver", "asyncio", "mysql"]
 license = "Apache-2.0"
-name = "asyncmy"
+name = "asyncmy2"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
