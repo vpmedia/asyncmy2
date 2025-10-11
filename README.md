@@ -38,7 +38,7 @@ The result comes from [benchmark](./benchmark).
 ## Install
 
 ```shell
-uv add asyncmy
+uv add asyncmy2
 ```
 
 ### Installing on Windows
@@ -60,7 +60,7 @@ vs_buildtools.exe --norestart --passive --downloadThenInstall --includeRecommend
 7. Install asyncmy via UV
 
 ```shell
-uv add asyncmy
+uv add asyncmy2
 ```
 
 Now you can uninstall previously installed tools.
