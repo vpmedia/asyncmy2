@@ -26,6 +26,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.pdm-build/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -50,6 +51,9 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+
+# Ruff
+.ruff_cache/
 
 # Translations
 *.mo
@@ -103,6 +107,7 @@ celerybeat.pid
 
 # Environments
 .env
+.env.local
 .venv
 env/
 venv/

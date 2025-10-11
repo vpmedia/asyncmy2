@@ -9,7 +9,7 @@
 
 `asyncmy` is a fast asyncio MySQL/MariaDB driver, which reuse most of [pymysql](https://github.com/PyMySQL/PyMySQL)
 and [aiomysql](https://github.com/aio-libs/aiomysql) but rewrite core protocol with [cython](https://cython.org/) to
-speedup.
+speedup. This project is a community maintained fork of https://github.com/long2ice/asyncmy.
 
 ## Features
 
@@ -158,6 +158,14 @@ async def run():
 if __name__ == '__main__':
     asyncio.run(run())
 ```
+
+## Development
+
+### MacOS
+
+Install homebrew packages
+
+    $ brew install uv mysql-client pkg-config
 
 ## ThanksTo
 

@@ -2,10 +2,10 @@ import asyncio
 import os
 
 import pytest_asyncio
+from asyncmy.cursors import DictCursor
 
 import asyncmy
 from asyncmy import connect
-from asyncmy.cursors import DictCursor
 
 connection_kwargs = dict(
     host="127.0.0.1",
