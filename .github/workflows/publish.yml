@@ -22,7 +22,7 @@ jobs:
         uses: pypa/cibuildwheel@v3.2.0
         env:
           CIBW_SKIP: "cp38-* cp39-* pp38-* pp39-*"
-          CIBW_ENVIRONMENT: "pip install --upgrade pip cython"
+          CIBW_BEFORE_BUILD: "pip install --upgrade pip cython"
       - uses: actions/upload-artifact@v4
         with:
           name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
