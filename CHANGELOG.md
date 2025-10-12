@@ -2,6 +2,10 @@
 
 ## 0.2
 
+### 0.2.18
+
+- Exclude the `benchmark` and `examples` folder from the package distribution.
+
 ### 0.2.17
 
 - Added frozen dependency installation for uv.
@@ -30,7 +34,7 @@
 - Added OSError exception handling to connection getpass.getuser() for Python 3.13+ compatibility. ([#133](https://github.com/long2ice/asyncmy/pull/133))
 - Fixed deprecated VALUES regexp syntax issue. ([#120](https://github.com/long2ice/asyncmy/pull/120))
 - Changed connection pool behavior to send QUIT message while closing connections. ([#113](https://github.com/long2ice/asyncmy/pull/113))
-- Improved compatibility with MacOS development environment support.
+- Improved MacOS development environment support.
 - Fixed pytest asyncio test runner issues with latest version.
 - Bumped python and github workflow dependency versions.
 
