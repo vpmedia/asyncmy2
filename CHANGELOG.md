@@ -2,6 +2,10 @@
 
 ## 0.2
 
+### 0.2.15
+
+- Bumped pypa/cibuildwheel version to v3.2.0, generate MacOS Intel wheels.
+
 ### 0.2.14
 
 - Added handling of cancelled tasks while execution in progress. ([#108](https://github.com/long2ice/asyncmy/pull/108))
