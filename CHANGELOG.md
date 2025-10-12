@@ -2,6 +2,11 @@
 
 ## 0.2
 
+### 0.2.17
+
+- Added frozen dependency installation for uv.
+- First release with Trusted Publisher workflow.
+
 ### 0.2.16
 
 - Generate MacOS Intel wheels.
