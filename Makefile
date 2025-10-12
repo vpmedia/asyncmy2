@@ -52,7 +52,13 @@ test: deps _test
 
 # Clean build files
 clean:
-	@rm -rf *.so && rm -rf build && rm -rf dist && rm -rf asyncmy/*.c && rm -rf asyncmy/*.so && rm -rf asyncmy/*.html
+	@rm -rf *.so
+	@rm -rf .pdm-build
+	@rm -rf build
+	@rm -rf dist
+	@rm -rf asyncmy/*.c
+	@rm -rf asyncmy/*.so
+	@rm -rf asyncmy/*.html
 
 # Build the project
 build: clean
