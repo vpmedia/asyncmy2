@@ -2,9 +2,13 @@
 
 ## 0.2
 
+### 0.2.16
+
+- Generate MacOS Intel wheels.
+
 ### 0.2.15
 
-- Bumped pypa/cibuildwheel version to v3.2.0, generate MacOS Intel wheels.
+- Bumped pypa/cibuildwheel version to v3.2.0.
 
 ### 0.2.14
 
