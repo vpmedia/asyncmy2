@@ -24,9 +24,9 @@ up:
 deps:
 	@if [ ! -f asyncmy/charset.c ]; then \
 		echo "asyncmy not built yet, running uv with reinstall package..."; \
-		uv sync --all-groups --all-extras --reinstall-package asyncmy2 $(options); \
+		uv sync --frozen --all-groups --all-extras --reinstall-package asyncmy2 $(options); \
 	else \
-		uv sync --all-groups --all-extras $(options); \
+		uv sync --frozen --all-groups --all-extras $(options); \
 	fi
 
 # Lint and format codebase
