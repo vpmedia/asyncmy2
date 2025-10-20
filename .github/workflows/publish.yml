@@ -34,7 +34,7 @@ jobs:
           name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
           path: wheelhouse/*.whl
   build_sdist:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment: release
     steps:
       - uses: actions/checkout@v5
@@ -52,7 +52,7 @@ jobs:
           name: cibw-sdist
           path: dist/*.tar.gz
   upload:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment: release
     needs: [build_wheels, build_sdist]
     permissions:

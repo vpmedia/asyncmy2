@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   ci_mysql:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     services:
       database:
         image: mysql:latest
@@ -37,7 +37,7 @@ jobs:
         run: make ci
 
   ci_mariadb:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     services:
       database:
         image: mariadb:latest
