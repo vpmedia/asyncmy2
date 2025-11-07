@@ -128,10 +128,12 @@ _map_error(
 cpdef raise_mysql_exception(bytes data):
     errno = H.unpack(data[1:3])[0]
     if data[3] == ord("#"):
+        sql_state = data[4:9].decode("utf-8", "replace")
         err_val = data[9:].decode("utf-8", "replace")
     else:
+        sql_state = None
         err_val = data[3:].decode("utf-8", "replace")
     error_class = error_map.get(errno)
     if error_class is None:
         error_class = InternalError if errno < 1000 else OperationalError
-    raise error_class(errno, err_val)
+    raise error_class(errno, err_val, sql_state)
