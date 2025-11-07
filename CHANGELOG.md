@@ -2,6 +2,11 @@
 
 ## 0.2
 
+### 0.2.19
+
+- Bumped package versions.
+- Added SQLState parsing for MySQL exceptions. ([#138](https://github.com/long2ice/asyncmy/issues/138))
+
 ### 0.2.18
 
 - Exclude the `benchmark` and `examples` folder from the package distribution.
