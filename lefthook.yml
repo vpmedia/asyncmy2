@@ -1,0 +1,24 @@
+# Lefthook configuration
+# @namespace python
+# @copyright Copyright (c) 2025-present VPMedia
+# @author Andras Csizmadia <andras@vpmedia.hu>
+# @version 1.0.0
+# @see https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+
+pre-commit:
+  parallel: false
+  commands:
+    format_py:
+      glob: "*.py"
+      run: |
+        set -e
+        uvx ruff@latest check --select I --fix {staged_files}
+        uvx ruff@latest format {staged_files}
+        git add {staged_files} &> /dev/null || true
+    lint_py:
+      glob: "*.py"
+      run: uvx ruff@latest check {staged_files}
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm exec commitlint --edit {1}
