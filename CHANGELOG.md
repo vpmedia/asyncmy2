@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Bumped pypa/cibuildwheel to v3.3
+- Bumped actions/checkout to v6
 
 ## 0.2.19
 
