@@ -17,7 +17,7 @@ ifneq (,$(wildcard ./.env))
 endif
 
 # Upgrade packages
-up:
+update:
 	@uv lock --upgrade
 
 # Install dependencies
