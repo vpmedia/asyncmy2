@@ -1,9 +1,10 @@
 # ChangeLog
 
-## Unreleased
+## 0.2.20
 
 - Bumped pypa/cibuildwheel to v3.3
 - Bumped actions/checkout to v6
+- Extended build wheel targets to Ubuntu ARM and Windows ARM
 
 ## 0.2.19
 
