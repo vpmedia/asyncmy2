@@ -34,6 +34,9 @@ test = [
     "uvloop; sys_platform != 'win32' and implementation_name == 'cpython'",
 ]
 
+[tool.uv]
+exclude-newer = "1 days"
+
 [tool.pdm.version]
 source = "file"
 path = "asyncmy/version.py"
