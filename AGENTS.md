@@ -9,7 +9,6 @@ A fast asyncio MySQL/MariaDB driver. API-compatible with `aiomysql`, with the co
 - **Language:** Python (>=3.10), Cython
 - **Build:** PDM backend (`pdm-backend`), `setuptools`, `wheel`, custom `build.py`, `cibuildwheel`
 - **Package Manager:** uv
-- **Domain:** Asyncio MySQL driver
 - **Testing:** pytest, pytest-asyncio, pytest-mock, pytest-xdist, aiomysql, pymysql, mysqlclient, uvloop (non-Windows)
 - **Lint/Format:** ruff
 - **Type Checking:** mypy, pyright
