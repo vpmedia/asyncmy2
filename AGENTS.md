@@ -15,6 +15,16 @@ A fast asyncio MySQL/MariaDB driver. API-compatible with `aiomysql`, with the co
 - **Type Checking:** mypy, pyright
 - **Tooling:** Make, lefthook (git hooks), commitlint
 
+## Documentation
+
+- Cython: https://context7.com/cython/cython/llms.txt
+- Lefthook: https://lefthook.dev/llms.txt
+- mypy: https://mypy.readthedocs.io/en/stable/llms.txt
+- pytest: https://docs.pytest.org/en/stable/llms.txt
+- pytest-asyncio: https://context7.com/pytest-dev/pytest-asyncio/llms.txt
+- Ruff: https://docs.astral.sh/ruff/llms.txt
+- uv: https://docs.astral.sh/uv/llms.txt
+
 ## Commands
 
 - **Install deps:** `make deps`
