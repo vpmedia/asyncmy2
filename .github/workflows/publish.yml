@@ -17,19 +17,19 @@ jobs:
       matrix:
         os: [macos-15-intel, macos-latest, ubuntu-latest, ubuntu-24.04-arm, windows-latest, windows-11-arm]
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # 7.0.0
         with:
           fetch-depth: 0
-      - uses: astral-sh/setup-uv@v7
+      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39  # 8.2.0
         with:
           version: "latest"
           activate-environment: true
           enable-cache: true
       - name: Build wheels
-        uses: pypa/cibuildwheel@v3.4
+        uses: pypa/cibuildwheel@294735312765b09d24a2fbec22660ce817587d55  # 4.1.0
         env:
           CIBW_BEFORE_BUILD: "python -m pip install --upgrade pip cython"
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # 7.0.1
         with:
           name: cibw-wheels-${{ matrix.os }}-${{ strategy.job-index }}
           path: wheelhouse/*.whl
@@ -37,17 +37,17 @@ jobs:
     runs-on: ubuntu-24.04
     environment: release
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # 7.0.0
         with:
           fetch-depth: 0
-      - uses: astral-sh/setup-uv@v7
+      - uses: astral-sh/setup-uv@fac544c07dec837d0ccb6301d7b5580bf5edae39  # 8.2.0
         with:
           version: "latest"
           activate-environment: true
           enable-cache: true
       - name: Build
         run: uv build
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # 7.0.1
         with:
           name: cibw-sdist
           path: dist/*.tar.gz
@@ -58,11 +58,11 @@ jobs:
     permissions:
       id-token: write
     steps:
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # 8.0.1
         with:
           pattern: cibw-*
           path: dist
           merge-multiple: true
-      - uses: pypa/gh-action-pypi-publish@release/v1
+      - uses: pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b  # 1.14.0
         with:
           print-hash: true
