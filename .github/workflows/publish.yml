@@ -17,7 +17,7 @@ jobs:
       matrix:
         os: [macos-15-intel, macos-latest, ubuntu-latest, ubuntu-24.04-arm, windows-latest, windows-11-arm]
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # 7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # 7.0.1
         with:
           fetch-depth: 0
       - uses: astral-sh/setup-uv@f98e06938123ccabd21905ea5d0069192241f9f1  # 8.3.1
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-24.04
     environment: release
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # 7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # 7.0.1
         with:
           fetch-depth: 0
       - uses: astral-sh/setup-uv@f98e06938123ccabd21905ea5d0069192241f9f1  # 8.3.1
