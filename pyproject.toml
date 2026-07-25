@@ -81,7 +81,13 @@ include = ["asyncmy"]
 [tool.ruff]
 line-length = 100
 [tool.ruff.lint]
-extend-select = [
+# Pinned explicitly rather than extending ruff's defaults: 0.16.0 widened the
+# default selection well beyond pycodestyle/Pyflakes, which would enable ~17
+# extra rule groups here as a side effect of a version bump. Adopt those
+# deliberately instead.
+select = [
+    "E",      # https://docs.astral.sh/ruff/rules/#pycodestyle-e
+    "F",      # https://docs.astral.sh/ruff/rules/#pyflakes-f
     "FA",     # https://docs.astral.sh/ruff/rules/#flake8-future-annotations-fa
     "UP",     # https://docs.astral.sh/ruff/rules/#pyupgrade-up
     "RUF100", # https://docs.astral.sh/ruff/rules/#ruff-specific-rules-ruf
