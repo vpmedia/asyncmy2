@@ -6,13 +6,7 @@ A fast asyncio MySQL/MariaDB driver. API-compatible with `aiomysql`, with the co
 
 ## Tech Stack
 
-- **Language:** Python (>=3.10), Cython
-- **Build:** PDM backend (`pdm-backend`), `setuptools`, `wheel`, custom `build.py`, `cibuildwheel`
-- **Package Manager:** uv
-- **Testing:** pytest, pytest-asyncio, pytest-mock, pytest-xdist, aiomysql, pymysql, mysqlclient, uvloop (non-Windows)
-- **Lint/Format:** ruff
-- **Type Checking:** mypy, pyright
-- **Tooling:** Make, lefthook (git hooks), commitlint
+Read [pyproject.toml](pyproject.toml) for the language, dependencies and tooling.
 
 ## Documentation
 
@@ -33,15 +27,6 @@ A fast asyncio MySQL/MariaDB driver. API-compatible with `aiomysql`, with the co
 - **Lint + format + types (check only):** `make check`
 - **CI bundle:** `make ci`
 - **Benchmark / examples:** `make benchmark` / `make example`
-
-## Project Structure
-
-- `asyncmy/` — driver source (Python + Cython `.pyx`)
-- `tests/` — pytest suite (`test_*.py`)
-- `examples/` — runnable usage samples
-- `benchmark/` — performance scripts
-- `build.py` — PDM custom build hook (Cython compilation)
-- `conftest.py` — pytest fixtures
 
 ## Conventions
 
