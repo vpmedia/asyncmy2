@@ -40,3 +40,9 @@ Read [pyproject.toml](pyproject.toml) for the language, dependencies and tooling
 - Async mode: `auto` (asyncio), session-scoped event loop
 - Run a single test: `uv run pytest tests/test_connection.py::test_name`
 - Requires a reachable MySQL instance; password via `MYSQL_PASS`
+
+## Reference Documentation
+
+Read on demand:
+
+- [clean-code.md](docs/agents/clean-code.md) — general clean-code guidelines: naming, functions, comments, error handling, classes, testing, and refactoring.
