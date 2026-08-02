@@ -46,3 +46,4 @@ Read [pyproject.toml](pyproject.toml) for the language, dependencies and tooling
 Read on demand:
 
 - [clean-code.md](docs/agents/clean-code.md) — general clean-code guidelines: naming, functions, comments, error handling, classes, testing, and refactoring.
+- [release.md](docs/agents/release.md) — release procedure: version bump, changelog entry, GitHub release, and the automated PyPI publish.
