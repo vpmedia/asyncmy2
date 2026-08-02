@@ -27,7 +27,7 @@ cpdef escape_item(val, str charset, mapping: dict = None):
     return val
 
 cpdef dict escape_dict(dict val, str charset, mapping: dict = None):
-    raise TypeError("dict can not be used as parameter")
+    return {escape_string(str(k)): escape_item(v, charset, mapping) for k, v in val.items()}
 
 
 cpdef str escape_sequence(tuple val, str charset, mapping: dict = None):
