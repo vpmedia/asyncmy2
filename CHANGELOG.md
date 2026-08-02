@@ -1,5 +1,11 @@
 # ChangeLog
 
+## 0.2.21
+
+- Re-enabled `escape_dict()` with properly escaped keys, so dict parameters work again without reintroducing SQL injection via crafted keys (CVE-2025-65896 / CVE-2024-36039). ([#25](https://github.com/vpmedia/asyncmy2/pull/25))
+- Fixed `convert_date()`, `convert_datetime()`, `convert_time()` and `convert_timedelta()` raising `TypeError` instead of returning the raw value for invalid dates such as `0000-00-00`. ([#24](https://github.com/vpmedia/asyncmy2/issues/24))
+- Bumped dependency and GitHub Actions versions.
+
 ## 0.2.20
 
 - Bumped pypa/cibuildwheel to v3.3
