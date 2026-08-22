@@ -267,6 +267,9 @@ class Connection:
         self._result = None
         self._affected_rows = 0
         self.host_info = "Not connected"
+        # Real value arrives with the handshake; the default keeps the escapers
+        # usable (and backslash-escaping) before the connection is established.
+        self.server_status = 0
 
         # specified autocommit mode. None means use server default.
         self.autocommit_mode = autocommit
@@ -277,6 +280,15 @@ class Connection:
         # Need for MySQLdb compatibility.
         self._encoders = {k: v for (k, v) in conv.items() if type(k) is not int}
         self._decoders = {k: v for (k, v) in conv.items() if type(k) is int}
+        # The stock str/bytes encoders always escape with backslashes. Swap in the
+        # connection-aware variants so values nested inside sequences and dicts are
+        # quoted for the server's SERVER_STATUS_NO_BACKSLASH_ESCAPES state, the same
+        # way escape() handles top-level values. A caller-supplied conv wins.
+        if self._encoders.get(str) is converters.escape_str:
+            self._encoders[str] = self._escape_str
+        if self._encoders.get(bytes) is converters.escape_bytes:
+            self._encoders[bytes] = self._escape_bytes
+            self._encoders[bytearray] = self._escape_bytes
         self._sql_mode = sql_mode
         self._init_command = init_command
         self._max_allowed_packet = max_allowed_packet
@@ -458,7 +470,7 @@ class Connection:
         if isinstance(obj, str):
             return "'" + self.escape_string(obj) + "'"
         if isinstance(obj, (bytes, bytearray)):
-            return converters.escape_bytes_prefixed(obj)
+            return self._escape_bytes(obj)
         return converters.escape_item(obj, self._charset, mapping=mapping)
 
     def literal(self, obj):
@@ -472,6 +484,17 @@ class Connection:
         if self.server_status & SERVER_STATUS_NO_BACKSLASH_ESCAPES:
             return s.replace("'", "''")
         return converters.escape_string(s)
+
+    def _escape_str(self, value, mapping=None):
+        """Connection-aware stand-in for converters.escape_str()."""
+        return "'" + self.escape_string(str(value)) + "'"
+
+    def _escape_bytes(self, value, mapping=None):
+        """Connection-aware stand-in for converters.escape_bytes()."""
+        quoted = self._quote_bytes(bytes(value))
+        if self._binary_prefix:
+            return "_binary" + quoted
+        return quoted
 
     def _quote_bytes(self, bytes s):
         if self.server_status & SERVER_STATUS_NO_BACKSLASH_ESCAPES:
